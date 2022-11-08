@@ -64,7 +64,7 @@ public class MovieController {
     }
 
     @DeleteMapping("/movies/delete-director-by-name")
-    public ResponseEntity<String> deleteByDirectorName(@RequestParam String directorName){
+    public ResponseEntity<String> deleteDirectorByName(@RequestParam(value = "director") String directorName){
         movieService.deleteByDirectorName(directorName);
         return new ResponseEntity<>("Success", HttpStatus.ACCEPTED);
     }
